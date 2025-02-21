@@ -4,7 +4,6 @@ import glsl from "vite-plugin-glsl";
 
 // https://vite.dev/config/
 export default defineConfig({
-  assetsInclude: ["**/*.hdr", "**/*.glb"],
   plugins: [
     react(),
     glsl({

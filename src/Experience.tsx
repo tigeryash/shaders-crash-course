@@ -1,7 +1,5 @@
 import { Environment, OrbitControls } from "@react-three/drei";
 import { Perf } from "r3f-perf";
-import bg from "./static/aerodynamics_workshop.hdr";
-import * as THREE from "three";
 
 function Experience() {
   return (
@@ -10,41 +8,32 @@ function Experience() {
       <OrbitControls />
       <Environment
         background
-        files={bg}
-        backgroundIntensity={0.4}
-        backgroundBlurriness={0.5}
+        preset="city"
+        backgroundIntensity={1}
+        environmentIntensity={0.6}
       />
       <mesh position={[0, -1, 0]}>
-        <icosahedronGeometry args={[2.5, 5]} />
-        <meshStandardMaterial
-          metalness={0.5}
-          roughness={0.25}
-          envMapIntensity={0.5}
-          color={"#858080"}
-        />
+        <boxGeometry args={[10, 1, 10]} />
+        <meshStandardMaterial color={"#000"} />
       </mesh>
 
-      <mesh
-        position={[-4, -3, -4]}
-        receiveShadow
-        onUpdate={(self) => self.lookAt(0, 0, 0)}
-      >
-        <planeGeometry args={[10, 10, 10]} />
-        <meshStandardMaterial color={"#aaaaaa"} />
+      <mesh position={[-2, 0, 0]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color={"#f00"} />
+      </mesh>
+
+      <mesh position={[2, 0, 0]}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial color={"#0f0"} />
       </mesh>
 
       <directionalLight
-        position={[6.25, 3, 4]}
+        position={[0.25, 2, -2.25]}
         intensity={2.6}
         color={"#ffffff"}
         castShadow
         shadow-mapSize={[1024, 1024]}
         shadow-camera-far={15}
-        shadow-camera-left={-8}
-        shadow-camera-right={8}
-        shadow-camera-top={8}
-        shadow-camera-bottom={-8}
-        shadow-camera-near={0.1}
       />
       <ambientLight intensity={0.2} />
     </>
