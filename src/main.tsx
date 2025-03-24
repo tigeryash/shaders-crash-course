@@ -1,4 +1,3 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import Experience from "./Experience.tsx";
@@ -6,7 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import { Leva } from "leva";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
+  <>
     <Canvas
       gl={{ antialias: true }}
       shadows
@@ -19,5 +18,5 @@ createRoot(document.getElementById("root")!).render(
       <Experience />
     </Canvas>
     <Leva collapsed />
-  </StrictMode>
+  </>
 );
