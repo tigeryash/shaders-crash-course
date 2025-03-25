@@ -15,6 +15,7 @@ createRoot(document.getElementById("root")!).render(
         far: 200,
       }}
     >
+      <color attach="background" args={["#000000"]} />
       <Experience />
     </Canvas>
     <Leva collapsed />
