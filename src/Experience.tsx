@@ -35,7 +35,6 @@ function Experience() {
         <shaderMaterial
           ref={matRef}
           key={key}
-          ref={matRef}
           vertexShader={vertexShader}
           fragmentShader={fragmentShader}
           uniforms={{
