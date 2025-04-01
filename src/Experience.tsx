@@ -20,6 +20,12 @@ function Experience() {
       matRef.current.uniforms.uTime.value += delta;
     }
   });
+
+  useFrame((_, delta) => {
+    if (matRef.current) {
+      matRef.current.uniforms.uTime.value += delta;
+    }
+  });
   return (
     <>
       <Perf position="top-left" />
@@ -27,6 +33,7 @@ function Experience() {
       <mesh>
         <icosahedronGeometry args={[1, 100]} />
         <shaderMaterial
+          ref={matRef}
           key={key}
           ref={matRef}
           vertexShader={vertexShader}
